@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SIT Academy | System of Information Technology</title>
+<meta name="description" content="SIT Academy — practical IT education, professional diplomas and digital skills in Sabir Abad, Karak.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+:root{
+ --navy:#07111f;--navy2:#0b1930;--blue:#1677ff;--cyan:#19d3ff;
+ --white:#f7fbff;--muted:#9aa9bd;--card:#0d1a2d;--line:rgba(255,255,255,.09);
+ --gold:#ffca55;--green:#24d17e;
+}
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+body{font-family:Inter,sans-serif;background:var(--navy);color:var(--white);line-height:1.6;overflow-x:hidden}
+a{text-decoration:none;color:inherit}.container{width:min(1160px,91%);margin:auto}
+section{padding:105px 0}
+.topbar{background:#04101d;border-bottom:1px solid var(--line);font-size:12px;color:#aebbd0}
+.topbar .container{display:flex;justify-content:space-between;padding:9px 0}
+.topbar span{margin-right:20px}.topbar i{color:var(--cyan);margin-right:5px}
+nav{position:sticky;top:0;z-index:100;background:rgba(7,17,31,.88);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:11px}.brand-mark{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,var(--blue),var(--cyan));display:grid;place-items:center;font-weight:900;color:#fff}.brand strong{font-family:Outfit;font-size:20px}.brand small{display:block;color:var(--muted);font-size:9px;letter-spacing:1.8px}
+.links{display:flex;list-style:none;gap:27px}.links a{font-size:13px;color:#c1ccdb;transition:.25s}.links a:hover{color:#fff}
+.nav-cta{padding:11px 17px;background:var(--blue);border-radius:9px;font-size:13px;font-weight:700}.menu{display:none;font-size:23px}
+
+.hero{min-height:720px;display:flex;align-items:center;position:relative;overflow:hidden;background:
+radial-gradient(circle at 80% 25%,rgba(25,211,255,.16),transparent 28%),
+radial-gradient(circle at 20% 70%,rgba(22,119,255,.13),transparent 30%),
+linear-gradient(145deg,#06101d,#0a1930)}
+.hero:after{content:"";position:absolute;width:600px;height:600px;border:1px solid rgba(25,211,255,.08);border-radius:50%;right:-240px;bottom:-300px}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:60px;align-items:center;position:relative;z-index:2}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid rgba(25,211,255,.25);background:rgba(25,211,255,.06);border-radius:30px;color:#a9eaff;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.4px;margin-bottom:20px}
+.badge i{color:var(--green)}
+.hero h1{font-family:Outfit;font-size:clamp(48px,6vw,76px);line-height:1.02;letter-spacing:-2.5px;margin-bottom:22px}
+.hero h1 span{color:var(--cyan)}
+.hero p{color:var(--muted);max-width:620px;font-size:16px;margin-bottom:30px}
+.buttons{display:flex;gap:12px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;gap:9px;padding:13px 20px;border-radius:10px;font-size:13px;font-weight:800;transition:.3s}.primary{background:linear-gradient(135deg,var(--blue),#299cff);box-shadow:0 12px 35px rgba(22,119,255,.22)}.secondary{border:1px solid var(--line);background:rgba(255,255,255,.04)}.btn:hover{transform:translateY(-3px)}
+.hero-card{position:relative;background:rgba(255,255,255,.055);border:1px solid var(--line);border-radius:25px;padding:28px;box-shadow:0 30px 80px rgba(0,0,0,.35)}
+.hero-card:before{content:"";position:absolute;inset:1px;border-radius:24px;background:linear-gradient(145deg,rgba(25,211,255,.12),transparent 45%);pointer-events:none}
+.card-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:25px}.live{font-size:10px;color:#89ffc4;background:rgba(36,209,126,.1);border:1px solid rgba(36,209,126,.2);padding:6px 9px;border-radius:20px}.hero-card h3{font-family:Outfit;font-size:22px}.course-mini{display:flex;gap:13px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}.course-mini:last-child{border:0}.course-icon{width:42px;height:42px;border-radius:11px;background:rgba(22,119,255,.12);color:var(--cyan);display:grid;place-items:center}.course-mini strong{font-size:13px}.course-mini small{display:block;color:var(--muted);font-size:11px}
+
+.stats{margin-top:-48px;position:relative;z-index:5}.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);background:#0c1b30;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 25px 60px rgba(0,0,0,.3)}.stat{text-align:center;padding:25px;border-right:1px solid var(--line)}.stat:last-child{border:0}.stat strong{display:block;font-family:Outfit;font-size:29px;color:#fff}.stat span{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:1px}
+
+.section-head{text-align:center;max-width:700px;margin:0 auto 52px}.eyebrow{color:var(--cyan);font-size:11px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase}.section-head h2{font-family:Outfit;font-size:42px;margin:8px 0}.section-head p{color:var(--muted)}
+
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}.about h3{font-family:Outfit;font-size:31px;margin-bottom:16px}.about p{color:var(--muted);margin-bottom:15px}.feature-list{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:25px}.feature{padding:18px;border:1px solid var(--line);background:var(--card);border-radius:13px}.feature i{color:var(--cyan);font-size:18px}.feature strong{display:block;font-size:13px;margin-top:8px}.feature small{color:var(--muted);font-size:11px}
+.about-panel{padding:35px;border-radius:22px;background:linear-gradient(145deg,#102541,#0b1729);border:1px solid var(--line)}.about-panel .quote{font-family:Outfit;font-size:28px;line-height:1.25;margin-bottom:25px}.about-panel p{font-size:13px}.director{display:flex;align-items:center;gap:13px;margin-top:25px}.avatar{width:45px;height:45px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--blue),var(--cyan));font-weight:900}.director small{color:var(--muted)}
+
+.courses{background:#091525}.course-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:19px}.course{background:var(--card);border:1px solid var(--line);border-radius:17px;padding:26px;transition:.3s;position:relative;overflow:hidden}.course:hover{transform:translateY(-7px);border-color:rgba(25,211,255,.35)}.course:after{content:"";position:absolute;width:100px;height:100px;background:var(--blue);filter:blur(65px);opacity:.12;right:-30px;top:-30px}.course .icon{width:48px;height:48px;border-radius:13px;background:rgba(22,119,255,.13);color:var(--cyan);display:grid;place-items:center;font-size:20px;margin-bottom:18px}.course h3{font-family:Outfit;font-size:19px}.course p{color:var(--muted);font-size:12px;margin:7px 0 16px}.tag{display:inline-block;color:#a9d9ff;background:rgba(22,119,255,.1);padding:5px 8px;border-radius:6px;font-size:10px;font-weight:700}
+
+.programs{display:grid;grid-template-columns:1fr 1fr;gap:20px}.program{padding:27px;background:linear-gradient(135deg,#101f35,#0c1728);border:1px solid var(--line);border-radius:18px}.program h3{font-family:Outfit;font-size:23px}.program p{color:var(--muted);font-size:13px;margin:8px 0 17px}.chips{display:flex;gap:7px;flex-wrap:wrap}.chip{font-size:10px;padding:6px 9px;border-radius:7px;background:rgba(255,255,255,.05);color:#c8d2df}
+
+.process{background:#091525}.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.step{padding:25px;border:1px solid var(--line);border-radius:15px;background:rgba(255,255,255,.025)}.num{color:var(--cyan);font-weight:900;font-size:12px}.step h3{font-family:Outfit;margin:13px 0 7px}.step p{font-size:12px;color:var(--muted)}
+
+.cta{padding:75px 20px;border:1px solid rgba(25,211,255,.15);border-radius:24px;text-align:center;background:radial-gradient(circle at 50% 0,rgba(25,211,255,.14),transparent 45%),#0c1b2e}.cta h2{font-family:Outfit;font-size:43px}.cta p{color:var(--muted);max-width:600px;margin:10px auto 26px}.contact-row{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+footer{padding:30px 0;border-top:1px solid var(--line);color:var(--muted);font-size:12px}footer .container{display:flex;justify-content:space-between;gap:15px}.socials{display:flex;gap:13px}.socials a:hover{color:var(--cyan)}
+
+@media(max-width:850px){
+.topbar .container{justify-content:center}.topbar span:last-child{display:none}
+.links{display:none;position:absolute;top:76px;left:0;width:100%;padding:24px;background:#081321;flex-direction:column;text-align:center}.links.open{display:flex}.menu{display:block}.nav-cta{display:none}
+.hero-grid,.about-grid{grid-template-columns:1fr}.hero{padding:85px 0 100px}.hero-card{max-width:600px;margin:auto}
+.stats-grid{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat{border-bottom:1px solid var(--line)}
+.course-grid{grid-template-columns:1fr 1fr}.programs{grid-template-columns:1fr}.process-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:560px){
+section{padding:78px 0}.hero h1{font-size:49px}.section-head h2{font-size:34px}.course-grid,.process-grid,.feature-list{grid-template-columns:1fr}.stats{margin-top:-30px}.stats-grid{grid-template-columns:1fr 1fr}.stat strong{font-size:23px}footer .container{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+
+<body>
+<div class="topbar"><div class="container">
+<span><i class="fa-solid fa-location-dot"></i> Sabir Abad, Karak</span>
+<span><i class="fa-solid fa-phone"></i> 0331 9344080</span>
+<span><i class="fa-regular fa-clock"></i> Admissions Open</span>
+</div></div>
+
+<nav>
+<div class="container nav">
+<a href="#home" class="brand">
+<div class="brand-mark">SIT</div>
+<div><strong>System of Information Technology</strong><small>ACADEMY</small></div>
+</a>
+<ul class="links">
+<li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#courses">Courses</a></li><li><a href="#programs">Programs</a></li><li><a href="#contact">Admissions</a></li>
+</ul>
+<a class="nav-cta" href="https://wa.me/923319344080" target="_blank"><i class="fa-brands fa-whatsapp"></i> Apply Now</a>
+<div class="menu"><i class="fa-solid fa-bars"></i></div>
+</div>
+</nav>
+
+<section class="hero" id="home">
+<div class="container hero-grid">
+<div>
+<div class="badge"><i class="fa-solid fa-circle-check"></i> Admissions Open</div>
+<h1>Build your future with <span>digital skills.</span></h1>
+<p>SIT Academy provides practical IT education designed to turn beginners into confident digital professionals — from computer fundamentals to web development, design, e-commerce and professional diplomas.</p>
+<div class="buttons">
+<a class="btn primary" href="https://wa.me/923319344080" target="_blank"><i class="fa-brands fa-whatsapp"></i> Enroll on WhatsApp</a>
+<a class="btn secondary" href="#courses"><i class="fa-solid fa-arrow-down"></i> Explore Courses</a>
+</div>
+</div>
+
+<div class="hero-card">
+<div class="card-head"><h3>Popular Programs</h3><span class="live">● LIVE ADMISSIONS</span></div>
+<div class="course-mini"><div class="course-icon"><i class="fa-solid fa-laptop-code"></i></div><div><strong>Diploma in Information Technology</strong><small>1 Year • Practical IT Skills</small></div></div>
+<div class="course-mini"><div class="course-icon"><i class="fa-solid fa-code"></i></div><div><strong>Certificate in Information Technology</strong><small>6 Months • Career Foundation</small></div></div>
+<div class="course-mini"><div class="course-icon"><i class="fa-solid fa-computer"></i></div><div><strong>Basic Information Technology</strong><small>3 Months • Beginner Friendly</small></div></div>
+<div class="course-mini"><div class="course-icon"><i class="fa-solid fa-palette"></i></div><div><strong>Graphic Design & Digital Skills</strong><small>Project-Based Learning</small></div></div>
+</div>
+</div>
+</section>
+
+<div class="stats"><div class="container stats-grid">
+<div class="stat"><strong>DIT</strong><span>1 Year Diploma</span></div>
+<div class="stat"><strong>CIT</strong><span>6 Month Certificate</span></div>
+<div class="stat"><strong>BIT</strong><span>3 Month Program</span></div>
+<div class="stat"><strong>100%</strong><span>Practical Focus</span></div>
+</div></div>
+
+<section id="about"><div class="container">
+<div class="section-head"><div class="eyebrow">Why SIT Academy</div><h2>Learn skills you can actually use.</h2><p>Our learning approach combines structured courses with practical assignments and real digital projects.</p></div>
+<div class="about-grid">
+<div>
+<h3>Education beyond the classroom.</h3>
+<p>SIT Academy focuses on practical technology education for students who want useful skills for study, employment, freelancing and entrepreneurship.</p>
+<p>Students can build a foundation in information technology and then move toward specialized digital skills according to their goals.</p>
+<div class="feature-list">
+<div class="feature"><i class="fa-solid fa-laptop"></i><strong>Practical Training</strong><small>Learn by doing real tasks.</small></div>
+<div class="feature"><i class="fa-solid fa-user-graduate"></i><strong>Career Skills</strong><small>Build job-ready digital skills.</small></div>
+<div class="feature"><i class="fa-solid fa-diagram-project"></i><strong>Real Projects</strong><small>Create work for your portfolio.</small></div>
+<div class="feature"><i class="fa-solid fa-headset"></i><strong>Guidance</strong><small>Support throughout your learning journey.</small></div>
+</div>
+</div>
+<div class="about-panel">
+<div class="quote">“Learn the technology. Build the skill. Create your opportunity.”</div>
+<p>SIT is built around one simple idea: technology becomes valuable when students can use it to solve real problems.</p>
+<div class="director"><div class="avatar">S</div><div><strong>SIT Academy</strong><small>System of Information Technology</small></div></div>
+</div>
+</div>
+</div></section>
+
+<section class="courses" id="courses"><div class="container">
+<div class="section-head"><div class="eyebrow">Explore Learning</div><h2>Our Courses</h2><p>Choose a structured program or specialize in a practical digital skill.</p></div>
+<div class="course-grid">
+<div class="course"><div class="icon"><i class="fa-solid fa-laptop-code"></i></div><h3>DIT</h3><p>Diploma in Information Technology with a broad foundation in computing and office technology.</p><span class="tag">1 YEAR</span></div>
+<div class="course"><div class="icon"><i class="fa-solid fa-certificate"></i></div><h3>CIT</h3><p>Certificate program covering essential computer and information technology skills.</p><span class="tag">6 MONTHS</span></div>
+<div class="course"><div class="icon"><i class="fa-solid fa-computer"></i></div><h3>BIT</h3><p>Beginner-friendly program for students starting their journey in information technology.</p><span class="tag">3 MONTHS</span></div>
+<div class="course"><div class="icon"><i class="fa-solid fa-pen-nib"></i></div><h3>Graphic Designing</h3><p>Learn visual design, creative composition and digital graphics for real-world content.</p><span class="tag">SKILL COURSE</span></div>
+<div class="course"><div class="icon"><i class="fa-solid fa-code"></i></div><h3>Web Development</h3><p>Build responsive websites and learn front-end and back-end development fundamentals.</p><span class="tag">PROJECT BASED</span></div>
+<div class="course"><div class="icon"><i class="fa-solid fa-film"></i></div><h3>Video Editing</h3><p>Create engaging videos for social media, education, marketing and digital brands.</p><span class="tag">CREATIVE SKILL</span></div>
+<div class="course"><div class="icon"><i class="fa-solid fa-bullhorn"></i></div><h3>Digital Marketing & SEO</h3><p>Learn content, social media, search optimization and digital promotion fundamentals.</p><span class="tag">CAREER SKILL</span></div>
+<div class="course"><div class="icon"><i class="fa-solid fa-cart-shopping"></i></div><h3>E-Commerce</h3><p>Explore online stores, product listings, Shopify, Amazon and e-commerce workflows.</p><span class="tag">BUSINESS SKILL</span></div>
+<div class="course"><div class="icon"><i class="fa-solid fa-mobile-screen-button"></i></div><h3>Android App Development</h3><p>Understand the foundations of building applications for mobile platforms.</p><span class="tag">DEVELOPMENT</span></div>
+</div>
+</div></section>
+
+<section id="programs"><div class="container">
+<div class="section-head"><div class="eyebrow">Professional Pathways</div><h2>More Opportunities</h2><p>Specialized training options for students looking to expand their professional skills.</p></div>
+<div class="programs">
+<div class="program"><h3><i class="fa-solid fa-shield-halved" style="color:#19d3ff"></i> Safety & Professional Diplomas</h3><p>Training pathways for students interested in workplace safety and technical professional skills.</p><div class="chips"><span class="chip">IOSH</span><span class="chip">OSHA</span><span class="chip">NEBOSH</span><span class="chip">Electrical</span><span class="chip">Mechanical</span></div></div>
+<div class="program"><h3><i class="fa-solid fa-briefcase" style="color:#19d3ff"></i> Freelancing & E-Commerce</h3><p>Practical digital business skills for building online services and e-commerce workflows.</p><div class="chips"><span class="chip">Fiverr</span><span class="chip">Upwork</span><span class="chip">Amazon</span><span class="chip">Shopify</span><span class="chip">Virtual Assistance</span></div></div>
+</div>
+</div></section>
+
+<section class="process"><div class="container">
+<div class="section-head"><div class="eyebrow">How We Teach</div><h2>A practical learning journey.</h2></div>
+<div class="process-grid">
+<div class="step"><span class="num">01 / START</span><h3>Choose Your Path</h3><p>Select a diploma, certificate or specialized skill based on your goals.</p></div>
+<div class="step"><span class="num">02 / LEARN</span><h3>Build Foundations</h3><p>Understand concepts through structured lessons and guided practice.</p></div>
+<div class="step"><span class="num">03 / PRACTICE</span><h3>Work on Projects</h3><p>Apply your knowledge through practical assignments and digital projects.</p></div>
+<div class="step"><span class="num">04 / GROW</span><h3>Build Your Portfolio</h3><p>Turn completed work into evidence of your skills for future opportunities.</p></div>
+</div>
+</div></section>
+
+<section id="contact"><div class="container"><div class="cta">
+<div class="eyebrow">Admissions</div><h2>Ready to start learning?</h2><p>Contact SIT Academy on WhatsApp for course details, admission information and guidance about choosing the right program.</p>
+<div class="contact-row">
+<a class="btn primary" href="https://wa.me/923319344080" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp: 0331 9344080</a>
+<a class="btn secondary" href="#courses"><i class="fa-solid fa-book-open"></i> View Courses</a>
+</div>
+</div></div></section>
+</body>
+
+<footer><div class="container"><div>© 2026 System of Information Technology (SIT) Academy.</div><div class="socials"><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a><a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a><a href="https://wa.me/923319344080" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a></div></div></footer>
+
+<script>
+const menu=document.querySelector('.menu'),links=document.querySelector('.links');
+menu.addEventListener('click',()=>links.classList.toggle('open'));
+document.querySelectorAll('.links a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+</script>
+</html>
